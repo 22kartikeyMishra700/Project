@@ -1,65 +1,23 @@
-# Project 
-Components: Header Files:
-c
-#include <stdio.h>
-#include <stdlib.h>
-The program includes standard input/output and standard library headers.
+# YOUR PROJECT TITLE Project1
+#### Video Demo:  <https://www.youtube.com/watch?v=qgRGJiTo6uo>
+#### Description:
+Factorial Calculator
+Project Overview
+The Factorial Calculator is a simple C program designed to calculate the factorial of a positive integer provided as a command-line argument. The project consists of two main files: factorial.c and README.md. The C file contains the program code, including the factorial function and the main function for execution. The README file provides detailed documentation about the project, explaining its purpose, the structure of the code, and any notable design choices.
+File Descriptions
+factorial.c
+This file contains the C code for the Factorial Calculator. It includes standard input/output and standard library headers. The program defines a recursive factorial function to calculate the factorial of a given integer. The main function serves as the entry point, validating command-line arguments, converting input to an integer, and calling the factorial function. Error messages are displayed for incorrect inputs, and the result is printed to the console.
+README.md
+The README file serves as comprehensive documentation for the Factorial Calculator project. It begins with a brief overview of the project's purpose and functionality. It then provides detailed explanations of the components in the factorial.c file, such as the header files, the recursive factorial function, and the main function.
 
-Factorial Function:
+Additionally, the README explains the rationale behind specific design choices, such as the decision to use recursion for calculating the factorial and the choice of error messages. It encourages users to follow the provided usage instructions and offers an example command for running the program. The README emphasizes the importance of allocating sufficient time and energy to thoroughly document the project and express pride in the work.
+Design Choices
+Recursive Factorial Function
+The decision to implement the factorial calculation using recursion was made for simplicity and clarity of the code. While an iterative approach is also valid, recursion provides an elegant solution that aligns with the mathematical definition of factorial
+Error Handling
+The program includes robust error handling to ensure a positive integer is provided as input. Error messages guide users on correct usage, enhancing the user experience.
+Usage Instructions
+To use the Factorial Calculator, compile the factorial.c file and run the executable from the command line. Provide a positive integer as a command-line argument to calculate its factorial. For example: This will output: "The factorial of 5 is 120."
+Conclusion
+The Factorial Calculator is a simple yet well-documented C program. The README.md file serves as a comprehensive guide, explaining the project's purpose, code structure, and design choices. Users are encouraged to follow the provided instructions for a smooth experience. The project demonstrates a commitment to clarity, robustness, and user-friendly error handling.
 
-c
-unsigned long long factorial(int n) {
-    if (n == 0 || n == 1) {
-        return 1;
-    } else {
-        return n * factorial(n - 1);
-    }
-}
-The factorial function is a recursive function that calculates the factorial of a given integer n.
-The base case is when n is 0 or 1, in which case the factorial is 1. Otherwise, it recursively calculates the factorial by multiplying n with the factorial of n−1.
-
-Main Function:
-int main(int argc, char *argv[]) {
-    // Check if there is exactly one command-line argument
-    if (argc != 2) {
-        printf("Usage: %s <number>\n", argv[0]);
-        return 1; // Return an error code
-    }
-
-    // Convert the command-line argument to an integer
-    int number = atoi(argv[1]);
-
-    // Check if the conversion was successful
-    if (number <= 0) {
-        printf("Please enter a positive integer.\n");
-        return 1; // Return an error code
-    }
-
-    // Calculate and print the factorial
-    unsigned long long result = factorial(number);
-    printf("The factorial of %d is %llu\n", number, result);
-
-    return 0; // Return success
-}
-The main function is the entry point of the program.
-It checks whether the program is called with exactly one command-line argument.
-It converts the command-line argument to an integer using atoi.
-It validates that the conversion was successful and that the number is positive.
-It then calculates the factorial using the factorial function and prints the result.
-The program returns 0 on success and 1 on failure.
-
-Usage Message and Error Handling:
-printf("Usage: %s <number>\n", argv[0]);
-If the program is not called with the correct number of arguments, it prints a usage message.
-
-if (number <= 0) {
-    printf("Please enter a positive integer.\n");
-    return 1; // Return an error code
-}
-If the conversion was unsuccessful or the provided number is not positive, it prints an error message and returns an error code.
-
-Execution:
-To use the program, you would compile it and run it from the command line, providing a positive integer as an argument. For example:
-
-./factorial 5
-This would calculate and print the factorial of 5.
